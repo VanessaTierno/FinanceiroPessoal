@@ -40,6 +40,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Despesa"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuDespesaActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuReceita">
               <Properties>
@@ -48,6 +51,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Receita"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuReceitaActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

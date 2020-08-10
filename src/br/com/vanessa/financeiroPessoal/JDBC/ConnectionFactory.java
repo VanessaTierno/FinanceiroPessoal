@@ -8,14 +8,17 @@ package br.com.vanessa.financeiroPessoal.JDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author alan
  */
 public class ConnectionFactory {
-   public Connection getConnection(){
+   public static Connection getConnection(){
     try {
         return DriverManager.getConnection(
                 "jdbc:mysql://localhost/financeiroPessoal", "root", "nessa0512");
@@ -23,4 +26,16 @@ public class ConnectionFactory {
         throw new RuntimeException(e);
     }
    }
+   
+    public static void closeConnection(Connection con, PreparedStatement stmt) {
+        try{
+            if (con != null){
+                stmt.close();
+                con.close();
+            }
+        } catch (SQLException ex){
+            Logger.getLogger(ConnectionFactory.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }

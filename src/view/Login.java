@@ -5,6 +5,10 @@
  */
 package view;
 
+import br.com.vanessa.financeiroPessoal.DAO.UsuarioDAO;
+import br.com.vanessa.financeiroPessoal.model.Usuario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author alan
@@ -33,10 +37,12 @@ public class Login extends javax.swing.JFrame {
         jLabelSenha = new javax.swing.JLabel();
         jLabelUsuario = new javax.swing.JLabel();
         jLabelLogin = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabelPainel = new javax.swing.JLabel();
         jLabelFundo = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(TextSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, 170, 30));
 
@@ -73,12 +79,32 @@ public class Login extends javax.swing.JFrame {
         jLabelLogin.setText("Login");
         getContentPane().add(jLabelLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, -1, -1));
 
+        jButton1.setText("Primeiro Acesso");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 400, -1, -1));
+
         jLabelPainel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/painel-login2.png"))); // NOI18N
         jLabelPainel.setPreferredSize(new java.awt.Dimension(300, 300));
         getContentPane().add(jLabelPainel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, -1, -1));
 
-        jLabelFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/fundoLogin.jpg"))); // NOI18N
-        getContentPane().add(jLabelFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabelFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/fundoLogin2.jpg"))); // NOI18N
+        getContentPane().add(jLabelFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 640, 340));
+
+        jTextField1.setEditable(false);
+        jTextField1.setFont(new java.awt.Font("Perpetua Titling MT", 3, 48)); // NOI18N
+        jTextField1.setText("Financeiro");
+        jTextField1.setCaretColor(new java.awt.Color(255, 255, 255));
+        jTextField1.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 350, 70));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -88,8 +114,26 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_TextUsuarioActionPerformed
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
-        // TODO add your handling code here:
+        Usuario u = new Usuario();
+        u.setNome(TextUsuario.getText());
+        u.setSenha(TextSenha.getText());
+        if(UsuarioDAO.buscarUsuario(u)){
+            this.dispose();
+        }else{
+            
+            JOptionPane.showMessageDialog(null, "Usuário não encontrado!!!");
+        }
     }//GEN-LAST:event_jButtonEntrarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+       PrimeiroAcesso  pAcesso = new PrimeiroAcesso();
+       pAcesso.show();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,11 +173,13 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField TextSenha;
     private javax.swing.JTextField TextUsuario;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonEntrar;
     private javax.swing.JLabel jLabelFundo;
     private javax.swing.JLabel jLabelLogin;
     private javax.swing.JLabel jLabelPainel;
     private javax.swing.JLabel jLabelSenha;
     private javax.swing.JLabel jLabelUsuario;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

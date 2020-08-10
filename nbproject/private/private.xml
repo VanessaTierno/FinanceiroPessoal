@@ -3,13 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/vantiernoDev/projetoJava/FinanceiroPessoal/src/view/imagens/fundoLogin.jpg</file>
-            <file>file:/E:/vantiernoDev/projetoJava/FinanceiroPessoal/src/br/com/vanessa/financeiroPessoal/JDBC/ConnectionFactory.java</file>
-            <file>file:/E:/vantiernoDev/projetoJava/FinanceiroPessoal/src/br/com/vanessa/financeiroPessoal/model/Conta.java</file>
+            <file>file:/E:/vantiernoDev/projetoJava/FinanceiroPessoal/src/view/PrimeiroAcesso.java</file>
+            <file>file:/E:/vantiernoDev/projetoJava/FinanceiroPessoal/src/view/RelatorioMensal.java</file>
+            <file>file:/E:/vantiernoDev/projetoJava/FinanceiroPessoal/src/view/Despesa.java</file>
+            <file>file:/E:/vantiernoDev/projetoJava/FinanceiroPessoal/src/view/RelatorioAnual.java</file>
+            <file>file:/E:/vantiernoDev/projetoJava/FinanceiroPessoal/src/br/com/vanessa/financeiroPessoal/model/Registro.java</file>
+            <file>file:/E:/vantiernoDev/projetoJava/FinanceiroPessoal/src/view/CadastroConta.java</file>
             <file>file:/E:/vantiernoDev/projetoJava/FinanceiroPessoal/src/view/Login.java</file>
-            <file>file:/E:/vantiernoDev/projetoJava/FinanceiroPessoal/src/br/com/vanessa/financeiroPessoal/JDBC/teste/TestaConexao.java</file>
             <file>file:/E:/vantiernoDev/projetoJava/FinanceiroPessoal/src/view/MenuPrincipal.java</file>
-            <file>file:/E:/vantiernoDev/projetoJava/FinanceiroPessoal/src/incomes.png</file>
+            <file>file:/E:/vantiernoDev/projetoJava/FinanceiroPessoal/src/view/Receita.java</file>
+            <file>file:/E:/vantiernoDev/projetoJava/FinanceiroPessoal/src/br/com/vanessa/financeiroPessoal/DAO/RegistroDAO.java</file>
         </group>
     </open-files>
 </project-private>

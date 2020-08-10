@@ -7,7 +7,7 @@ package view;
 
 /**
  *
- * @author alan
+ * @author Vanessa
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
@@ -61,10 +61,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuDespesa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/icons/despesa.png"))); // NOI18N
         jMenuDespesa.setText("Despesa");
+        jMenuDespesa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuDespesaActionPerformed(evt);
+            }
+        });
         jMenuOperacao.add(jMenuDespesa);
 
         jMenuReceita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/icons/receita.png"))); // NOI18N
         jMenuReceita.setText("Receita");
+        jMenuReceita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuReceitaActionPerformed(evt);
+            }
+        });
         jMenuOperacao.add(jMenuReceita);
 
         jMenuBar1.add(jMenuOperacao);
@@ -115,16 +125,29 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuContaActionPerformed
-        // TODO add your handling code here:
+        CadastroConta conta = new CadastroConta();
+        conta.show();
     }//GEN-LAST:event_jMenuContaActionPerformed
 
     private void jMenuMensalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuMensalActionPerformed
-        // TODO add your handling code here:
+        RelatorioMensal rm = new RelatorioMensal();
+        rm.show();
     }//GEN-LAST:event_jMenuMensalActionPerformed
 
     private void jMenuAnualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAnualActionPerformed
-        // TODO add your handling code here:
+        RelatorioAnual ra = new RelatorioAnual();
+        ra.show();
     }//GEN-LAST:event_jMenuAnualActionPerformed
+
+    private void jMenuDespesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuDespesaActionPerformed
+        Despesa d = new Despesa();
+        d.show();
+    }//GEN-LAST:event_jMenuDespesaActionPerformed
+
+    private void jMenuReceitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuReceitaActionPerformed
+        Receita r = new Receita();
+        r.show();
+    }//GEN-LAST:event_jMenuReceitaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,6 +180,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MenuPrincipal().setVisible(true);
+                new Login().setVisible(true);
             }
         });
     }
