@@ -9,4 +9,4 @@
 - Cadastrar nova conta, editar e excluir uma conta;
 - Pesquisar por tipo (receita, despesa e todos) e gerar totais de cada opção.
 
-> Status do projeto: Em fase final de desenvolvimento
+> Status do projeto:  Finalizado.
